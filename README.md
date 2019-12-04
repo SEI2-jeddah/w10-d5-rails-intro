@@ -186,6 +186,20 @@ For the aspects of the Rails framework we are concerned with, excellent
 descriptions and code examples can be found in the
 [Getting Started with Rails guide](https://guides.rubyonrails.org/getting_started.html).
 
+# RESTful URLs Overview
+
+| CRUD Action | Controller Method | HTTP Method | URL / Path        | Active Record                   |
+| ----------- | ----------------- | ----------- | ----------------- | ------------------------------- |
+| READ        | index             | GET         | /authors          | Author.all()                    |
+|             | show              | GET         | /authors/:id      | Author.find_by(id: params[:id]) |
+| CREATE      | new               | GET         | /authors/new      | Author.new()                    |
+|             | create            | POST        | /authors          | Author.create(author_params)    |
+| UPDATE      | edit              | GET         | /authors/:id/edit | Author.find_by(id: params[:id]) |
+|             | update            | PUT / PATCH | /authors/:id      | author.update(author_params)    |
+| DELETE      | destroy           | DELETE      | /authors/:id      | author.destroy()                |
+
+
+
 ## Additional Resources
 
 - [RailsGuides](http://guides.rubyonrails.org/getting_started.html)
